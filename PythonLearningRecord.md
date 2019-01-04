@@ -1,19 +1,40 @@
 # Python Learning Record
-基础知识小结（来源于Eric Matthes: Python Crash Course）  
+基础知识小结（来源于Mike Dane's Giraffe Academy 以及 Eric Matthes: Python Crash Course）  
 ### 变量的命名和使用  
 * 变量名只能包含字母、数字和下划线，可以字母或下划线打头，但不能以数字打头
 * 慎用小写字母l和大写字母O，可能会被误认为数字1和0
 ### 关于字符串
 ```
-name.title()          #首字母大写
-name.upper()          #全部大写
-name.lower()          #全部小写
-name.strip()          #剔除字符串两端的空白
+name.title()            #首字母大写
+name.upper()            #全部大写
+name.lower()            #全部小写
+name.isupper()          #判别是否是大写
+len(name)               #字符串的长度
+print(name[0])          #按位显示
+name.strip()            #剔除字符串两端的空白
 ```
 制表符\t  
 换行符\n  
 ### 关于数字
+```
+print(10 % 3)                  #取余
+print(3 ** 3)                  #乘方
+my_num = 5
+print(str(my_num) + " apples")
+print(abs(my_num))             #绝对值
+print(pow(3, 2))               #幂
+print(max(3, 2))               #取大值
+print(round(3.7))              #四舍五入
+from math import *
+print(floor(3.7))              #舍去小数
+print(ceil(3.2))               #有小数便加一
+print(sqrt(9))                 #开方根
 
+num1 = input("enter a number: ")      # Building a Basic Calculator
+num2 = input("enter another number: ")
+result = float(num1) + float(num2)
+print(result)
+```
 ### 关于列表
 ```
 friends = ["Jack", "Kim", "Amy", "Mike", "Bob"]
