@@ -17,7 +17,7 @@ name.strip()            # 剔除字符串两端的空白
 换行符\n  
 ### 数字number
 ```
-print(10 % 3)                  # 取余
+print(10 % 3)                  # 取余/求模
 print(3 ** 3)                  # 乘方
 my_num = 5
 print(str(my_num) + " apples")
@@ -29,10 +29,12 @@ from math import *
 print(floor(3.7))              # 舍去小数
 print(ceil(3.2))               # 有小数便加一
 print(sqrt(9))                 # 开方根
-
-num1 = input("enter a number: ")      # Building a Basic Calculator
+```
+```
+# Building a Basic Calculator
+num1 = input("enter a number: ")           # num1存储的是string类型
 num2 = input("enter another number: ")
-result = float(num1) + float(num2)
+result = float(num1) + float(num2)         # 将string类型转化为float类型
 print(result)
 ```
 ### 列表list
@@ -69,7 +71,7 @@ sum(numbers)
 for friend in friends:              # 利用for循环针对列表中的每一个元素进行操作
     print(friend)
     
-number_grid = [                     # 2D lists
+number_grid = [                     # 2D lists 即列表的嵌套使用
     [1, 2, 3],
     [4, 5, 6],
     [7, 8, 9],
@@ -110,7 +112,7 @@ def max_num(num1, num2, num3):
 if-elif-else结构比较适合于只有一个条件满足的情况，如果要检查的条件很多，可以使用多个简单if语句  
 ```
 numbers = []
-if numbers:               # if后面跟列表名 用以检查列表是否为空
+if numbers:                     # if后面跟列表名 用以检查列表是否为空
     do something
 else:
     do something
@@ -146,4 +148,50 @@ pizza = {
     "crust": "thick",
     "toppings": ["mushrooms", "extra cheese"],          # 利用列表的嵌套使用来实现一个key对应多个value
 }
+```
+### while语句
+```
+number = input("enter a number: ")
+while True:
+    if number == "0":
+        break                               # break退出循环
+    else:
+        print(number)
+```
+```
+current_number = 0
+while current_number < 10:
+    current_number += 1
+    if current_number % 2 == 0:
+        continue                            # continue返回到循环开头
+    print(current_number)                   # 输出1 3 5 7 9
+```
+### 函数function
+```
+def pet(type, name):
+    print("My " + type + "'s name is " + name.title() + ".")
+
+pet("dog", "harry")                             # 传递位置实参 必须一一对应
+pet(name="harry", type="dog")                   # 传递关键字实参 无需一一对应
+```
+```
+# 传递任意数量的实参
+def pizza(*toppings)                            # 创建一个名为toppings的空元组
+def files(**info)                               # 创建一个名为info的空字典
+```
+```
+# 导入别的模块中的函数的几种方法
+import module_name                              # 导入模块
+module_name.function_name()                     # 调用模块中的函数
+
+from module_name import function_name           # 导入模块中的函数
+function_name()                                 # 调用函数
+
+from module_name import function_name as fn     # 导入模块中的函数并重命名为fn
+fn()                                            # 调用函数
+
+import module_name as mn                        # 导入模块并重命名为mn
+mn.function_name()                              # 调用模块中的函数
+
+from module_name import *                       # 导入模块中的所有函数
 ```
