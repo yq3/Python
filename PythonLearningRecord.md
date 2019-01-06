@@ -238,3 +238,25 @@ from module_name import class_name1, class_name2         # 从模块中导入类
 import module_name                                       # 导入整个模块
 module_name.class_name()                                 # 调用类
 ```
+### 读取文件
+```
+file_name = 'pi_digits.txt'                         # 将文件名存储于变量中
+
+with open(file_name) as file_object:                # 文件与代码在同一目录下 直接读取
+                                                    # with语句可以在不需要访问文件后将其关闭，从而不需要close()
+    contents = file_object.read()                   # 读取全部
+    print(contents.rstrip())
+    
+    for line in file_object:                        # 逐行读取
+        print(line.rstrip())
+    
+    lines = file_object.readlines()                 # readlines()读取每一行并存储在列表lines中
+    
+for line in lines:                                  # 在with以外依然可以使用列表lines
+    print(line.rstrip())
+
+with open("文件夹名\文件名.txt") as file_object:     # 读取相对文件路径（Windows为反斜杠）
+
+file_path = "C:\abc\def\ghi.txt"                    # 读取绝对文件路径
+with open(file_path) as file_object:
+```
