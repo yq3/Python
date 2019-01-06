@@ -264,7 +264,7 @@ with open(file_path) as file_object:
 ```
 file_name = "abc.txt"
 
-with open(file_name, "w") as file_object:   # "w"写入模式（会覆盖掉原有内容）  "r"读取模式（默认） 
-                                            # "a"附加模式（在文本末尾添加）    "r+"读取和写入
-    file_object.write("I love Python.")     # Python只能写入字符串类型，要写入多行必须用换行符\n
+with open(file_name, "w") as file_object:           # "w"写入模式（会覆盖掉原有内容）  "r"读取模式（默认） 
+                                                    # "a"附加模式（在文本末尾添加）    "r+"读取和写入
+    file_object.write("I love Python.")             # Python只能写入字符串类型，要写入多行必须用换行符\n
 ```
