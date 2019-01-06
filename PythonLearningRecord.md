@@ -98,8 +98,8 @@ print(squares)                                   # [1, 4, 9, 16, 25]
 coordinates = (4, 5)  
 ```
 ### if语句
-相等==  
-不等!=  
+if-elif-else结构比较适合于只有一个条件满足的情况，如果要检查的条件很多，可以使用多个简单if语句  
+相等==  不等!=  
 ```
 def max_num(num1, num2, num3):
     if num1 >= num2 and num1 >= num3:        
@@ -109,7 +109,6 @@ def max_num(num1, num2, num3):
     else:
         return num3
 ```
-if-elif-else结构比较适合于只有一个条件满足的情况，如果要检查的条件很多，可以使用多个简单if语句  
 ```
 numbers = []
 if numbers:                     # if后面跟列表名 用以检查列表是否为空
@@ -181,7 +180,7 @@ def files(**info)                               # 创建一个名为info的空�
 ```
 ```
 # 导入别的模块中的函数的几种方法
-import module_name                              # 导入模块
+import module_name                              # 导入整个模块
 module_name.function_name()                     # 调用模块中的函数
 
 from module_name import function_name           # 导入模块中的函数
@@ -194,4 +193,48 @@ import module_name as mn                        # 导入模块并重命名为mn
 mn.function_name()                              # 调用模块中的函数
 
 from module_name import *                       # 导入模块中的所有函数
+```
+### 类class
+高度一致的内容应该放入类中
+```
+class Dog:                                               # 类名：驼峰命名法 每个单词首字母大写 不使用下划线
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        self.color = "black"                             # 设定一个有默认值的属性
+
+    def sit(self):
+        print(self.name.title() + " is now sitting.")
+
+    def roll(self):
+        print(self.name.title() + " is now rolling.")
+
+
+my_dog = Dog("harry", 3)                                 # 访问属性
+print(my_dog.name.title())                               # Harry
+print(my_dog.age)                                        # 3
+print(my_dog.color)                                      # black
+my_dog.sit()                                             # Harry is now sitting.
+my_dog.roll()                                            # Harry is now rolling.
+
+
+class WildDog(Dog):                                      # 类的继承
+    def __init__(self, name, age):
+        super().__init__(name, age)                      # super()将父类与子类关联起来
+        self.property = "wild"                           # 子类的新增内容
+
+
+your_dog = WildDog("jack", 5)
+print(your_dog.name.title())                             # Jack
+print(your_dog.age)                                      # 5
+print(your_dog.color)                                    # black
+print(your_dog.property)                                 # wild
+your_dog.sit()                                           # Jack is now sitting.
+your_dog.roll()                                          # Jack is now rolling.
+```
+```
+from module_name import class_name1, class_name2         # 从模块中导入类
+
+import module_name                                       # 导入整个模块
+module_name.class_name()                                 # 调用类
 ```
