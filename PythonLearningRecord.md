@@ -242,7 +242,7 @@ module_name.class_name()                                 # 调用类
 ```
 file_name = 'pi_digits.txt'                         # 将文件名存储于变量中
 
-with open(file_name) as file_object:                # 文件与代码在同一目录下 直接读取
+with open(file_name) as file_object:                # 文件与代码在同一目录下 直接读取 默认为只读模式
                                                     # with语句可以在不需要访问文件后将其关闭，从而不需要close()
     contents = file_object.read()                   # 读取全部
     print(contents.rstrip())
@@ -259,4 +259,12 @@ with open("文件夹名\文件名.txt") as file_object:     # 读取相对文件
 
 file_path = "C:\abc\def\ghi.txt"                    # 读取绝对文件路径
 with open(file_path) as file_object:
+```
+### 写入文件
+```
+file_name = "abc.txt"
+
+with open(file_name, "w") as file_object:   # "w"写入模式（会覆盖掉原有内容）  "r"读取模式（默认） 
+                                            # "a"附加模式（在文本末尾添加）    "r+"读取和写入
+    file_object.write("I love Python.")     # Python只能写入字符串类型，要写入多行必须用换行符\n
 ```
