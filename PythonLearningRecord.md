@@ -268,3 +268,44 @@ with open(file_name, "w") as file_object:           # "w"写入模式（会覆�
                                                     # "a"附加模式（在文本末尾添加）    "r+"读取和写入
     file_object.write("I love Python.")             # Python只能写入字符串类型，要写入多行必须用换行符\n
 ```
+### 异常
+```
+try:
+    number = int(input("enter a number: "))
+except ValueError:                                  # except后面可以跟不同的error来区分种类
+    print("invalid input")
+    pass                                            # pass语句让程序继续运行 什么都不会发生
+else:
+    print(number)
+```
+### JSON(JavaScript Object Notation)
+```
+import json
+# 存储和读取数据
+numbers = list(range(6))
+file_name = "numbers.json"
+with open(file_name, "a") as f_obj:
+    json.dump(numbers, f_obj)
+with open(file_name) as f_obj:
+    num = json.load(f_obj)
+```
+### 测试
+```
+import unittest                                       # unittest模块提供了测试工具
+
+from file_name import function_name                   # 导入需要测试的函数
+
+class TestExample(unittest.TestCase)
+    def test_function_name(self):                     # 定义测试函数
+        test_obj = function_name()
+        # 断言方法
+        self.assertEqual(test_obj, a)                 # 核实被测对象 == a
+        self.assertNotEqual(test_obj, a)              # 核实被测对象 != a
+        self.assertTrue(test_obj)                     # 核实被测对象为True
+        self.assertFalse(test_obj)                    # 核实被测对象为False
+        self.assertIn(test_obj, list)                 # 核实被测对象在list中
+        self.assertNotIn(test_obj, list)              # 核实被测对象不在list中
+        
+unittest.main()                                       # 运行测试程序
+
+```
